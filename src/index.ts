@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import { Options } from "./types";
 
-import readFile from './read-file'
+import formatFile from "./format-file";
 
 const program = new Command();
 
@@ -18,12 +18,15 @@ program
 
 const options = program.opts<Options>();
 
-if (options.recursive) {
-  console.log('Listing to **/*.ts files for chanes')
-  process.exit(0)
+async function main() {
+  if (options.recursive) {
+    console.log("Listing to **/*.ts files for chanes");
+    process.exit(0);
+  }
+  
+  if (options.file) {
+    formatFile(options.file);
+  }
 }
 
-if (options.file) {
-  const fileContents = await readFile(options.file)
-  
-}
+main();

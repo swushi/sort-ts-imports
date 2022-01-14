@@ -1,5 +1,5 @@
-import fs from 'fs'
-import readline from 'readline';
+import * as fs from 'fs'
+import * as readline from 'readline';
 
 export default async function processLineByLine(filePath: string) {
   const lines: string[] = [];
@@ -16,6 +16,5 @@ export default async function processLineByLine(filePath: string) {
     // Each line in input.txt will be successively available here as `line`.
     lines.push(line);
   }
-
   return lines;
 }
