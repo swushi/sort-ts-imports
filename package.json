@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn ."
+    "dev": "ts-node-dev --respawn .",
+    "dev.file1": "npm run dev -- -f example/test1.tsx"
   },
   "keywords": [],
   "license": "ISC",
